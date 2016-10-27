@@ -15,6 +15,9 @@ hpc <- fread("household_power_consumption.txt",sep=";",na.strings = "?") %>%
 # Convert the Date and Time variables to Date/Time class
 hpc$DateTime <- with(hpc,strptime(paste(Date,Time,sep=" "),"%d/%m/%Y %H:%M:%S"))
 
+# Sets locale to English (if it is not the default language)
+Sys.setlocale("LC_TIME", "C")
+
 # Set device 
 png(file = "plot3.png")
 

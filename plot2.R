@@ -18,6 +18,9 @@ hpc$DateTime <- with(hpc,strptime(paste(Date,Time,sep=" "),"%d/%m/%Y %H:%M:%S"))
 # Set device 
 png(file = "plot2.png")
 
+# Sets locale to English (if it is not the default language)
+Sys.setlocale("LC_TIME", "C")
+
 # Plot
 with(hpc,plot(DateTime,Global_active_power,xlab = "",ylab = "Global Active Power (kilowatts)",type = "l" ))  
 

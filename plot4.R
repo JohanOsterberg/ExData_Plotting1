@@ -18,6 +18,9 @@ hpc$DateTime <- with(hpc,strptime(paste(Date,Time,sep=" "),"%d/%m/%Y %H:%M:%S"))
 # Set device 
 png(file = "plot4.png")
 
+# Sets locale to English (if it is not the default language)
+Sys.setlocale("LC_TIME", "C")
+
 # Set layout to 2x2 starting with rows
 par(mfrow = c(2,2))
 
